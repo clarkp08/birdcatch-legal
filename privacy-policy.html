@@ -148,6 +148,9 @@
       <li><strong>Feedback and corrections:</strong> Score feedback, catch reports, and Wrong Bird corrections you submit to help improve our AI</li>
       <li><strong>Device information:</strong> Push notification tokens (if you enable notifications), platform (iOS/Android)</li>
       <li><strong>Analytics:</strong> Anonymized usage events within the catch flow (e.g., photo taken, catch saved) to improve the app experience</li>
+      <li><strong>Content reports:</strong> When you report another user's content, we store the report details (reason, notes, target content ID, your user ID) in our <code>/reports</code> collection for moderation review</li>
+      <li><strong>Block list:</strong> When you block another user, their user ID is stored in your account's <code>blockedUsers</code> field. Blocked users are not notified.</li>
+      <li><strong>Moderation flags:</strong> Content that receives multiple reports may be automatically hidden. Hidden content is flagged with <code>hidden</code>, <code>hiddenReason</code>, and <code>hiddenAt</code> fields on the relevant catch or chirp document.</li>
     </ul>
     <div class="highlight">We do NOT collect precise background location. Location is only accessed when you actively log a catch.</div>
   </section>
