@@ -9,7 +9,6 @@
 <meta property="og:description" content="Birding with the world. One photo, one species at a time.">
 <meta property="og:url" content="https://birdcatch.app">
 <meta property="og:type" content="website">
-<link rel="icon" href="icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -19,8 +18,6 @@
     --sky:#0198F7;
     --navy:#1E3A5F;
     --cream:#FFFDF0;
-    --score-green:#10B981;
-    --gold:#F59E0B;
     --ink:#12263A;
   }
   *{box-sizing:border-box;margin:0;padding:0}
@@ -35,7 +32,6 @@
   .pixel{font-family:'Press Start 2P',monospace;letter-spacing:.02em;line-height:1.5}
   .wrap{max-width:1060px;margin:0 auto;padding:0 24px}
 
-  /* ---------- header ---------- */
   header{
     background:var(--catch-red);
     border-bottom:6px solid var(--ink);
@@ -48,8 +44,7 @@
     text-shadow:3px 3px 0 rgba(0,0,0,.35);
   }
 
-  /* ---------- hero ---------- */
-  .hero{padding:64px 0 52px;text-align:center}
+  .hero{padding:60px 0 44px;text-align:center}
   .tagline{
     font-size:clamp(15px,3.4vw,22px);
     color:#fff;
@@ -65,7 +60,6 @@
     text-shadow:0 1px 2px rgba(0,0,0,.18);
   }
 
-  /* ---------- store buttons ---------- */
   .stores{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
   .store-btn{
     display:inline-flex;align-items:center;gap:11px;
@@ -84,69 +78,27 @@
   .store-btn small{display:block;font-size:10px;font-weight:600;opacity:.72;line-height:1}
   .store-btn span{line-height:1.25}
 
-  /* ---------- birdcard (signature) ---------- */
-  .card-stage{padding:14px 0 68px;display:flex;justify-content:center}
-  .birdcard{
-    width:min(380px,100%);
-    background:var(--cream);
+  .shots{padding:8px 0 64px}
+  .shot-row{
+    display:flex;gap:20px;justify-content:center;align-items:flex-start;flex-wrap:wrap;
+  }
+  .shot{
+    width:min(268px,80vw);
     border:4px solid var(--ink);
-    border-radius:18px;
-    box-shadow:0 12px 0 rgba(0,0,0,.28);
+    border-radius:20px;
     overflow:hidden;
-    transform:rotate(-1.4deg);
+    background:var(--ink);
+    box-shadow:0 10px 0 rgba(0,0,0,.26);
   }
-  .bc-top{
-    background:var(--sky);
-    border-bottom:4px solid var(--ink);
-    padding:11px 15px;
-    display:flex;align-items:center;justify-content:space-between;gap:10px;
-  }
-  .bc-user{font-weight:800;color:#fff;font-size:15px;text-shadow:0 1px 1px rgba(0,0,0,.25)}
-  .bc-pill{
-    background:var(--navy);color:#fff;
-    padding:5px 11px;border-radius:999px;
-    font-size:10px;
-  }
-  .bc-photo{
-    aspect-ratio:4/3;
-    background:
-      radial-gradient(circle at 30% 34%, #7fb069 0 22%, transparent 22.5%),
-      radial-gradient(circle at 72% 62%, #4a7c4e 0 30%, transparent 30.5%),
-      linear-gradient(165deg,#a8d5a2,#4a7c4e);
-    display:flex;align-items:flex-end;justify-content:space-between;
-    padding:12px;gap:8px;
-    border-bottom:4px solid var(--ink);
-  }
-  .bc-badge{
-    font-size:9px;padding:6px 9px;border-radius:6px;
-    border:2px solid var(--ink);color:#fff;
-  }
-  .badge-tier{background:var(--gold)}
-  .badge-first{background:var(--catch-red)}
-  .bc-body{padding:15px}
-  .bc-species{font-size:20px;font-weight:800;color:var(--navy)}
-  .bc-place{font-size:13px;color:#5b6b7a;margin-bottom:13px}
-  .bc-row{
-    display:flex;justify-content:space-between;align-items:center;
-    font-size:13px;font-weight:700;
-    padding:6px 0;border-bottom:1px dashed #d9d2bd;
-  }
-  .bc-row span:last-child{color:var(--score-green);font-weight:800}
-  .bc-total{
-    display:flex;justify-content:space-between;align-items:center;
-    margin-top:11px;padding-top:11px;border-top:3px solid var(--ink);
-  }
-  .bc-total .lbl{font-size:11px}
-  .bc-total .val{font-size:19px;color:var(--catch-red)}
+  .shot img{display:block;width:100%;height:auto}
+  .shot:nth-child(2){transform:translateY(-14px)}
+  @media (max-width:900px){.shot:nth-child(2){transform:none}}
 
-  /* ---------- content panels ---------- */
   .panel{
     background:var(--cream);
     border-top:6px solid var(--ink);
-    border-bottom:6px solid var(--ink);
     padding:56px 0;
   }
-  .panel + .panel{border-top:none}
   .panel h2{
     font-size:clamp(13px,2.6vw,18px);
     color:var(--catch-red);
@@ -160,7 +112,6 @@
     font-size:12px;color:var(--navy);
   }
 
-  /* ---------- how it works ---------- */
   .steps{
     display:grid;gap:20px;
     grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
@@ -178,19 +129,9 @@
   .step h3{font-size:17px;color:var(--navy);margin-bottom:6px}
   .step p{font-size:15px;color:#42566b}
 
-  /* ---------- QR ---------- */
-  .qr-panel{background:var(--navy);border-top:6px solid var(--ink);padding:56px 0;text-align:center}
-  .qr-panel h2{font-size:clamp(12px,2.4vw,16px);color:#fff;margin-bottom:9px}
-  .qr-panel p{color:#b9cde0;margin-bottom:26px;font-size:16px}
-  .qr-box{
-    display:inline-block;background:#fff;padding:16px;
-    border:4px solid var(--ink);border-radius:14px;
-    box-shadow:0 7px 0 rgba(0,0,0,.32);
-  }
-  .qr-box canvas,.qr-box img{display:block;width:184px;height:184px}
-  .qr-url{margin-top:15px;font-size:11px;color:#fff}
+  .closer{background:var(--navy);border-top:6px solid var(--ink);padding:52px 0;text-align:center}
+  .closer p{color:#fff;font-size:clamp(13px,2.4vw,17px);margin-bottom:26px}
 
-  /* ---------- footer ---------- */
   footer{background:var(--ink);color:#9fb3c8;padding:34px 0;text-align:center;font-size:14px}
   footer a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.35)}
   footer a:hover{border-bottom-color:#fff}
@@ -199,10 +140,8 @@
 
   @media (prefers-reduced-motion:reduce){
     *{animation:none!important;transition:none!important}
-    .birdcard{transform:none}
   }
   @media (max-width:520px){
-    .birdcard{transform:none}
     .store-btn{width:100%;justify-content:center}
   }
 </style>
@@ -230,24 +169,12 @@
   </div>
 </section>
 
-<section class="card-stage">
-  <div class="birdcard">
-    <div class="bc-top">
-      <span class="bc-user">@birdcatcher</span>
-      <span class="pixel bc-pill">1,048 pts</span>
-    </div>
-    <div class="bc-photo">
-      <span class="pixel bc-badge badge-first">First Ever!</span>
-      <span class="pixel bc-badge badge-tier">RARE</span>
-    </div>
-    <div class="bc-body">
-      <div class="bc-species">Band-tailed Pigeon</div>
-      <div class="bc-place">Golden Gate Canyon, Colorado</div>
-      <div class="bc-row"><span>Photo quality</span><span>348</span></div>
-      <div class="bc-row"><span>Rarity</span><span>+250</span></div>
-      <div class="bc-row"><span>First Ever Catch</span><span>+300</span></div>
-      <div class="bc-row"><span>Unusual for the season</span><span>+100</span></div>
-      <div class="bc-total"><span class="pixel lbl">TOTAL</span><span class="pixel val">1,048</span></div>
+<section class="shots">
+  <div class="wrap">
+    <div class="shot-row">
+      <div class="shot"><img src="https://play-lh.googleusercontent.com/gBy1OR5F08sWLdsQuPd4QI6qTI1ra_X3kq5Un2ki089zdPDOWFcaNvKBTB_BnBUdWOSYCeCcNRUr0XoGacBU=w1080" alt="A Domestic Goose catch graded in BirdCatch" loading="lazy"></div>
+      <div class="shot"><img src="https://play-lh.googleusercontent.com/b5kMWC5BQb-zav6RPavvsADxrzCy3DwiamQTH6LIUBRDkMszCfNQYdBHIfL9xfZOBvnVlLMVcK2hdPmFKuv07w=w1080" alt="The BirdHouse home screen with notifications and milestones" loading="lazy"></div>
+      <div class="shot"><img src="https://play-lh.googleusercontent.com/eNA98d9PeouURInaO310uGj4bQ_do718zIatBXTU-QICdlqvJ-C2Lb7OAtED6jfVqxz6GAnuSWs4r20O44kh=w1080" alt="The Colorado leaderboard showing top catches this month" loading="lazy"></div>
     </div>
   </div>
 </section>
@@ -264,7 +191,7 @@
   </div>
 </section>
 
-<section class="panel">
+<section class="panel" style="border-top:none">
   <div class="wrap">
     <h2 class="pixel">How it works</h2>
     <div class="steps">
@@ -287,12 +214,19 @@
   </div>
 </section>
 
-<section class="qr-panel">
+<section class="closer">
   <div class="wrap">
-    <h2 class="pixel">Scan to download</h2>
-    <p>Point your phone camera here and it will open the right store.</p>
-    <div class="qr-box"><div id="qr"></div></div>
-    <div class="pixel qr-url">birdcatch.app/download</div>
+    <p class="pixel">Free to play. Go catch 'em in the wild.</p>
+    <div class="stores">
+      <a class="store-btn" href="https://apps.apple.com/app/birdcatch-birding-game/id6769105114">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.05 12.54c-.02-2.2 1.8-3.26 1.88-3.31-1.02-1.5-2.61-1.7-3.18-1.72-1.35-.14-2.64.8-3.33.8-.69 0-1.75-.78-2.87-.76-1.48.02-2.84.86-3.6 2.18-1.53 2.66-.39 6.6 1.1 8.76.73 1.06 1.6 2.25 2.74 2.2 1.1-.04 1.52-.71 2.85-.71 1.33 0 1.7.71 2.87.69 1.18-.02 1.93-1.08 2.65-2.14.84-1.23 1.18-2.42 1.2-2.48-.03-.01-2.3-.88-2.31-3.51zM14.9 5.6c.6-.74 1.01-1.76.9-2.78-.87.04-1.93.58-2.56 1.31-.56.65-1.06 1.7-.93 2.7.97.07 1.97-.49 2.59-1.23z"/></svg>
+        <span><small>Download on the</small>App Store</span>
+      </a>
+      <a class="store-btn" href="https://play.google.com/store/apps/details?id=com.theclarks.birdcatch">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.6 2.3c-.3.3-.5.8-.5 1.4v16.6c0 .6.2 1.1.5 1.4l.1.1 9.3-9.3v-.2L3.6 2.3zM16.3 15.1l-3.1-3.1v-.2l3.1-3.1.1.1 3.7 2.1c1 .6 1 1.6 0 2.2l-3.7 2.1-.1-.1zM15.6 15.8L12.4 12.6 3 22c.3.4.9.4 1.5.1l11.1-6.3M15.6 8.2L4.5 1.9C3.9 1.6 3.3 1.6 3 2l9.4 9.4 3.2-3.2z"/></svg>
+        <span><small>Get it on</small>Google Play</span>
+      </a>
+    </div>
   </div>
 </section>
 
@@ -308,16 +242,5 @@
   </div>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
-<script>
-  new QRCode(document.getElementById("qr"), {
-    text: "https://birdcatch.app/download",
-    width: 184,
-    height: 184,
-    colorDark: "#12263A",
-    colorLight: "#ffffff",
-    correctLevel: QRCode.CorrectLevel.M
-  });
-</script>
 </body>
 </html>
